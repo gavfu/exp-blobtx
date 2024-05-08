@@ -1,0 +1,56 @@
+{
+  "name": "exp-blobtx",
+  "version": "1.0.0",
+  "description": "Exp BlobTX",
+  "main": "app.ts",
+  "scripts": {
+    "start": "ts-node ./src/app.ts",
+    "build": "tsc",
+    "test": "mocha",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix"
+  },
+  "author": "gavfu",
+  "license": "ISC",
+  "dependencies": {
+    "@typechain/ethers-v5": "^11.1.2",
+    "@types/mkdirp": "^1.0.1",
+    "@types/progress": "^2.0.3",
+    "axios": "^0.24.0",
+    "bignumber.js": "^9.0.2",
+    "body-parser": "^1.19.0",
+    "c-kzg": "^4.0.0-alpha.1",
+    "dayjs": "^1.10.7",
+    "dotenv": "^16.0.2",
+    "ethers": "^5.5.3",
+    "jsdom": "^20.0.3",
+    "keythereum": "^2.0.0",
+    "lodash": "^4.17.21",
+    "mkdirp": "^1.0.4",
+    "moment": "^2.29.1",
+    "progress": "^2.0.3",
+    "query-string": "^7.0.1",
+    "randomstring": "^1.2.1",
+    "rss-to-json": "^2.0.2",
+    "sequelize": "^6.6.4",
+    "typechain": "^8.3.2",
+    "uuid": "^8.3.2",
+    "viem": "^2.10.1",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.178",
+    "@types/node": "^20.12.10",
+    "gts": "^3.1.0",
+    "mocha": "^9.0.1",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=16.13.0"
+  }
+}
