@@ -3,9 +3,11 @@ import 'dotenv/config';
 import * as cKzg from 'c-kzg';
 import { createWalletClient, http, setupKzg, parseGwei, stringToHex, toBlobs } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
-import { mainnetTrustedSetupPath } from 'viem/node';
+// import { mainnetTrustedSetupPath } from 'viem/node';
 
 import { sepolia, mainnet } from 'viem/chains';
+
+const mainnetTrustedSetupPath = './src/trusted-setups/viem-mainnet.json';
 
 async function expBlobs() {
   const account = privateKeyToAccount(`0x${process.env.BLOB_TX_SENDER || ''}`);
