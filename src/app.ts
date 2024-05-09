@@ -9,7 +9,7 @@ import { sepolia, mainnet } from 'viem/chains';
 const fs = require('fs');
 const mainnetTrustedSetupPath = './src/trusted-setups/viem-mainnet.json';
 
-async function expBlobs() {
+async function expSimpleBlobTx() {
   const account = privateKeyToAccount(`0x${process.env.BLOB_TX_SENDER || ''}`);
 
   const publicClient = createPublicClient({
@@ -48,7 +48,7 @@ async function expBlobs() {
   console.log(`Send blob transaction ${hash}`);
 }
 
-async function expBlobsSignAndSend() {
+async function expEIP7588() {
   const account = privateKeyToAccount(`0x${process.env.BLOB_TX_SENDER || ''}`);
 
   const publicClient = createPublicClient({
@@ -83,11 +83,11 @@ async function expBlobsSignAndSend() {
     blobs: [
       {
         content_type: "text/plain",
-        description: "Descritpion of the illustration"
+        description: "This blob contains a description text of the illustration. It's a hex encoded UTF-8 string."
       },
       {
         content_type: "image/png",
-        description: "The illustration image data in base64 format"
+        description: "This blob contains the illustration image data in base64 format. It's a hex encoded RFC 2397 (https://www.rfc-editor.org/rfc/rfc2397) data URL."
       },
     ]
   };
@@ -115,10 +115,9 @@ async function expBlobsSignAndSend() {
   console.log(`Send blob transaction ${hash}`);
 }
 
-
 async function main() {
-  // await expBlobs();
-  await expBlobsSignAndSend();
+  // await expSimpleBlobTx();
+  await expEIP7588();
 }
 
 main();
