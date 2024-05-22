@@ -1,10 +1,10 @@
 # Experience Blob TX with EIP-7588
 
-This repository demonstrates how to send an [EIP-4844](https://www.eip4844.com/) blob transaction to Sepolia with [EIP-7588](https://github.com/ethereum/ERCs/pull/185) extension.
+This repository demonstrates how to send an [EIP-4844](https://www.eip4844.com/) blob transaction to Sepolia with [EIP-7588](https://eips.ethereum.org/EIPS/eip-7588) extension.
 
 The blob transaction will carry two blobs, where the first blob is a text explaining what is "data availability sampling": `Data availability sampling: each node only needs to download a small portion of the data to verify the availability of the whole thing.`, and the second blob is the raw content of a [DAS image](./src/imgs/das.png).
 
-Additionaly, as specified by [EIP-7588](https://github.com/ethereum/ERCs/pull/185), the blob transaction's `data` field is attached with a metadata JSON object which provides additional information of the attached blobs:
+Additionaly, as specified by [EIP-7588](https://eips.ethereum.org/EIPS/eip-7588), the blob transaction's `data` field is attached with a metadata JSON object which provides additional information of the attached blobs:
 
 ```json
 {
